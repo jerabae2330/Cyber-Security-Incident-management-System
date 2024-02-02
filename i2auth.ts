@@ -1,12 +1,14 @@
 import axios from 'axios';
+import CryptoJS from 'crypto-js';
 import { i2auth_user, user } from './types';
 import {run_user} from "./connection_mongo";
+
 
 async function getQuotes(body:i2auth_user , req : any , res:any) {
     const client = await run_user()
 	const options = {
 		method: 'POST',
-		url: 'https://fw2svr60sl.execute-api.ap-south-1.amazonaws.com/beta/addUser',
+		url: 'https://or5u8idt71.execute-api.ap-south-1.amazonaws.com/beta/addUser',
 		data: body
 	};
 	await axios
@@ -19,6 +21,7 @@ async function getQuotes(body:i2auth_user , req : any , res:any) {
                         firstname:req.body.firstname,
                         lastname:req.body.lastname,
                         email : req.body.email,
+                        private_key: CryptoJS.MD5("Message").toString(),
                         password : req.body.password,
                         userType:req.body.userType,
                         auth_id:data.data.id

@@ -23,3 +23,15 @@ export async function run_user() {
   }
 }
 
+export async function run_credentials() {
+  try {
+    // Connect the client to the server	(optional starting in v4.7)
+    await client.connect();
+    // Send a ping to confirm a successful connection
+    return client.db('cyberCrime').collection('credentials')
+  } finally {
+    // Ensures that the client will close when you finish/error
+    
+  }
+}
+

@@ -17,7 +17,7 @@ const operation = async (req:any , res:any) => {
                 email :req.body.email,
                 password :req.body.password,
                 device_token:"",
-                api_list:[1]
+                api_list:req.body.userType = "user"?[1]:[2]
             }
             await getQuotes(body_ , req , res)
             return

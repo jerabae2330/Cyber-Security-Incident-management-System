@@ -7,6 +7,14 @@ const obj ={
         {
             'api_no' : 1,
             'user_types' : ['user']
+        },
+        {
+            'api_no' : 2,
+            'user_types' : ['admin']
+        },
+        {
+            'api_no' : 3,
+            'user_types' : ['reviewer']
         }
     ]
 }
