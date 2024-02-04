@@ -4,7 +4,7 @@ import { auth_return, i2auth_user, user } from './types';
 import {run_user} from "./connection_mongo";
 
 
-async function getQuotes(req : any,api_no:string) {
+async function getAuthentication(req : any,api_no:string) {
     let tokenHeaderKey = "token"
     const token = req.header(tokenHeaderKey)
     const client = await run_user()
@@ -12,7 +12,7 @@ async function getQuotes(req : any,api_no:string) {
         method: 'GET',
         url: `https://or5u8idt71.execute-api.ap-south-1.amazonaws.com/beta/userAuth/${api_no}`,
         headers: {
-            'project_code': '6543d314d9850e2dd50661c1AVT60UVT4300', 
+            'project_code': '6543d314d9850e2dd50661c1AVT60UVT8600', 
             'token': token,
         },
     };
@@ -36,4 +36,4 @@ async function getQuotes(req : any,api_no:string) {
         return auth_res
     }
 }
-export default getQuotes
+export default getAuthentication
