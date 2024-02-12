@@ -8,6 +8,7 @@ import add_reviewer from './addReviewer';
 import get_user from './getComplain_user';
 import get_admin from './getComplain_admin';
 import get_reviewer from './getComplain_reviewer';
+import get_reviewers from './getReviewers'
 import { auth_return } from './types';
 import getAuthentication from './i2auth_verification';
 
@@ -42,6 +43,10 @@ app.get('/getreviewer', (_req, _res) => {
 
 app.get('/getadmin', (_req, _res) => {
     get_admin(_req , _res)
+});
+
+app.get('/getreviewers', (_req, _res) => {
+    get_reviewers(_req , _res)
 });
 
 app.post('/addreviewer', (_req, _res) => {

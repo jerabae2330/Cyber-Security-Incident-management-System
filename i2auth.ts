@@ -21,7 +21,7 @@ async function getQuotes(body:i2auth_user , req : any , res:any) {
                         firstname:req.body.firstname,
                         lastname:req.body.lastname,
                         email : req.body.email,
-                        private_key: CryptoJS.MD5("Message").toString(),
+                        private_key: CryptoJS.MD5(req.body.email).toString(),
                         password : req.body.password,
                         userType:req.body.userType,
                         auth_id:data.data.id
